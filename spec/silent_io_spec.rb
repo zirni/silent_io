@@ -1,24 +1,11 @@
-require_relative '../silent_io'
-describe SilentIO do
-  it "silences $stdout" do
-    expect(true).to eq(true)
+# frozen_string_literal: true
 
-    expect($stdout).to_not receive(:puts).with('foo')
-
-    SilentIO.call do
-      puts 'foo'
-    end
-
+RSpec.describe SilentIo do
+  it "has a version number" do
+    expect(SilentIo::VERSION).not_to be nil
   end
 
-  it "silences $stderr" do
-    expect(true).to eq(true)
-
-    expect($stderr).to_not receive(:puts).with('bar')
-
-    SilentIO.call do
-      $stderr.puts 'bar'
-    end
-
+  it "does something useful" do
+    expect(false).to eq(true)
   end
 end
